@@ -79,6 +79,24 @@ public class Conditionals {
         System.out.println(number);
 
 
+        int giorno = 5;
+
+        // Switch expression con blocco di codice e yield
+        String tipoGiorno = switch (giorno) {
+            case 1, 7 -> "Weekend";
+            case 2, 3, 4, 5, 6 -> {
+                System.out.println("È un giorno feriale");
+                yield "Feriale";
+            }
+            default -> {
+                System.out.println("Giorno non valido");
+                yield "Sconosciuto";
+            }
+        };
+
+        System.out.println("Tipo di giorno: " + tipoGiorno);
+
+
         // Ternary operator
         System.out.println("\nOperatore ternario\n");
         int max = (x > y) ? x : y;
